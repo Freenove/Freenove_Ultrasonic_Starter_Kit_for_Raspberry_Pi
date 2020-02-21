@@ -10,16 +10,16 @@ from signal import pause
 
 print ('Program is starting...')
 
-led = LED(17)
+buzzer = LED(17)
 button = Button(18)
 
 def onButtonPressed():
-    led.on()
-    print("Button is pressed, led turned on >>>")
+    buzzer.on()
+    print("Button is pressed, buzzer turned on >>>")
     
 def onButtonReleased():
-    led.off()
-    print("Button is released, led turned on <<<")
+    buzzer.off()
+    print("Button is released, buzzer turned off <<<")
 
 button.when_pressed = onButtonPressed
 button.when_released = onButtonReleased
