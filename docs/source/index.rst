@@ -3,9 +3,14 @@
 Freenove Ultrasonic Starter Kit for Raspberry Pi
 ######################################################
 
-.. toctree::
-   :maxdepth: 2
-   :caption: FNK0024
-   :glob:
+Select the language you want to use.
 
-   fnk0024/fnk0024.rst
+.. toctree::
+   :maxdepth: 1
+   :caption: language
+    
+   c-lang-tutorial.rst
+   python-tutorial.rst
+   processing-tutorial.rst
+   java-tutorial.rst
+   scratch-tutorial.rst
