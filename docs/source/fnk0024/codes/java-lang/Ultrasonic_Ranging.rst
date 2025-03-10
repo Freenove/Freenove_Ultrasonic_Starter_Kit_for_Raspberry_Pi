@@ -14,7 +14,7 @@ Component List
 
 +-------------------------------------------------+-------------------------------------------------+
 |1. Raspberry Pi (with 40 GPIO) x1                |                                                 |     
-|                                                 | Jumper Wires x23                                |       
+|                                                 | Jumper Wires x4                                 |       
 |2. GPIO Extension Board & Ribbon Cable x1        |                                                 |       
 |                                                 |  |jumper-wire|                                  |                                                            
 |3. Breadboard x1                                 |                                                 |                                                                 
@@ -27,7 +27,7 @@ Component List
 .. |jumper-wire| image:: ../_static/imgs/jumper-wire.png
 .. |Ultrasonic_Module| image:: ../_static/imgs/Ultrasonic_Module.png
 .. |res-1K-hori| image:: ../_static/imgs/res-1K-hori.png
-      :width: 20%
+    :width: 60%
 
 Component Knowledge
 ================================================================
@@ -37,9 +37,7 @@ The Ultrasonic Ranging Module uses the principle that ultrasonic waves will be r
 .. image:: ../_static/imgs/Ultrasonic_knowledge.png
     :align: center
 
-.. container:: centered
-    
-    2S=V·t.
+.. math:: 2S=V·t.
 
 The Ultrasonic Ranging Module integrates a both an ultrasonic transmitter and a receiver. The transmitter is used to convert electrical signals (electrical energy) into high frequency (beyond human hearing) sound waves (mechanical energy) and the function of the receiver is opposite of this. The picture and the diagram of the Ultrasonic Ranging Module are shown below:
 
@@ -50,7 +48,6 @@ The Ultrasonic Ranging Module integrates a both an ultrasonic transmitter and a 
    * - |Ultrasonic_Module|
      - |HC_SR04|
 
-.. |Ultrasonic_Module| image:: ../_static/imgs/Ultrasonic_Module.png
 .. |HC_SR04| image:: ../_static/imgs/HC_SR04.png
 
 Pin description:
@@ -113,14 +110,14 @@ Sketch
 
 In this chapter, we will learn the usage of the ultrasonic sensor.
 
-Sketch_22_UltrasonicRanging
+Sketch_18_UltrasonicRanging
 ----------------------------------------------------------------
 
 First, enter where the project is located:
 
 .. code-block:: console
 
-    $ cd ~/Freenove_Kit/Pi4j/Sketches/Sketch_22_UltrasonicRanging
+    $ cd ~/Freenove_Kit/Pi4j/Sketches/Sketch_18_UltrasonicRanging
 
 .. image:: ../_static/imgs/java_ultrasonic.png
     :align: center
@@ -155,13 +152,14 @@ Click the icon to run the code.
 .. image:: ../_static/imgs/java_ultrasonic_code.png
     :align: center
 
-If the code fails to run, please check :doc:`Geany Configuration`.
+If the code fails to run, please check :ref:`Geany Configuration <Geany_Configuration>`.
 
 The following is program code:
 
-.. literalinclude:: ../../../freenove_Kit/Pi4j/Sketches/Sketch_22_UltrasonicRanging/UltrasonicRanging.java
+.. literalinclude:: ../../../freenove_Kit/Pi4j/Sketches/Sketch_18_UltrasonicRanging/UltrasonicRanging.java
     :linenos: 
     :language: java
+    :dedent:
 
 Re-encapsulate the GPIO functions using the Pi4J library, with these functions emulating the classic usage patterns of Arduino. This is done to ensure compatibility with the upcoming Ultrasonic class, allowing the Raspberry Pi to easily obtain distance data from ultrasonic modules. If you are interested in this code, please review it, as we will include detailed comments within the code.
 
@@ -179,21 +177,27 @@ Initialize the Pi4J context and assign it to GPIO.pi4.
 
 Initialize the Ultrasonic class and associate it with GPIO14 and GPIO15.
 
-.. literalinclude:: ../../../freenove_Kit/Pi4j/Sketches/Sketch_22_UltrasonicRanging/UltrasonicRanging.java
+.. literalinclude:: ../../../freenove_Kit/Pi4j/Sketches/Sketch_18_UltrasonicRanging/UltrasonicRanging.java
     :linenos: 
     :language: java
     :lines: 178-181
+    :dedent:
 
 Obtain the ultrasonic distance data every 100 milliseconds and display them on the terminal interface.
 
-.. literalinclude:: ../../../freenove_Kit/Pi4j/Sketches/Sketch_22_UltrasonicRanging/UltrasonicRanging.java
+.. literalinclude:: ../../../freenove_Kit/Pi4j/Sketches/Sketch_18_UltrasonicRanging/UltrasonicRanging.java
     :linenos: 
     :language: java
     :lines: 183-191
+    :dedent:
 
 At the end of the code, release the resources.
 
-.. literalinclude:: ../../../freenove_Kit/Pi4j/Sketches/Sketch_22_UltrasonicRanging/UltrasonicRanging.java
-    :linenos: 
-    :language: java
-    :lines: 194-199
+.. code-block:: c
+    :linenos:
+
+     finally {  
+        if (GPIO.pi4j != null) {  
+            GPIO.pi4j.shutdown();  
+        }  
+    }  
