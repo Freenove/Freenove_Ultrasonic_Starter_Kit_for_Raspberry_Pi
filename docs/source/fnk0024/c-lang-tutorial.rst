@@ -64,7 +64,7 @@ C language tutorial
    codes/c-lang/74HC595 & LED Matrix.rst
    codes/c-lang/LCD1602.rst
    codes/c-lang/Ultrasonic Ranging.rst
-   codes/c-lang/Other Components
+   codes/c-lang/Other Components.rst
 
 .. toctree::
    :titlesonly:
