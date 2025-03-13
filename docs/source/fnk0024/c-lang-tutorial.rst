@@ -65,4 +65,9 @@ C language tutorial
    codes/c-lang/LCD1602.rst
    codes/c-lang/Ultrasonic Ranging.rst
    codes/c-lang/Other Components
+
+.. toctree::
+   :titlesonly:
+   :caption: What's Next?
+   
    codes/c-lang/WhatsNext.rst

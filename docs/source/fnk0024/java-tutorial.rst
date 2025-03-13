@@ -61,4 +61,9 @@ Java language tutorial
    codes/java-lang/74HC595&LED_Matrix.rst
    codes/java-lang/LCD1602.rst
    codes/java-lang/Ultrasonic_Ranging.rst
+
+.. toctree::
+   :titlesonly:
+   :caption: What's Next?
+   
    codes/java-lang/WhatsNext.rst

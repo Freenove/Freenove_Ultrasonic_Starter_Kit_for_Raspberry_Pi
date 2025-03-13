@@ -28,7 +28,7 @@ Python language tutorial
 
 .. toctree::
    :titlesonly:
-   :caption: Installing_an_Operating_System
+   :caption: Installing an Operating System
 
    codes/python-lang/Installing_an_Operating_System.rst
 
@@ -65,4 +65,9 @@ Python language tutorial
    codes/python-lang/LCD1602.rst
    codes/python-lang/Ultrasonic Ranging.rst
    codes/python-lang/Web IoT.rst
+
+.. toctree::
+   :titlesonly:
+   :caption: What's Next?
+
    codes/python-lang/WhatsNext.rst
